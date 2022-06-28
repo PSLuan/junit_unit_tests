@@ -4,6 +4,8 @@ import com.example.entidades.Filme;
 import com.example.entidades.Locacao;
 import com.example.entidades.Usuario;
 import com.example.utils.DataUtils;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.util.Date;
 
@@ -27,7 +29,8 @@ public class LocacaoService {
         return locacao;
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void teste() {
         //cenario
         LocacaoService service = new LocacaoService();
         Usuario usuario = new Usuario("Usuario 1");
@@ -37,9 +40,9 @@ public class LocacaoService {
         Locacao locacao = service.alugarFilme(usuario, filme);
 
         //verificacao
-        System.out.println(locacao.getValor() == 5.0);
-        System.out.println(DataUtils.isMesmaData(locacao.getDataLocacao(), new Date()));
-        System.out.println(DataUtils.isMesmaData(locacao.getDataRetorno(), DataUtils.obterDataComDiferencaDias(1)));
+        Assertions.assertEquals(5.0, locacao.getValor());
+        Assertions.assertTrue(DataUtils.isMesmaData(locacao.getDataLocacao(), new Date()));
+        Assertions.assertTrue(DataUtils.isMesmaData(locacao.getDataRetorno(), DataUtils.obterDataComDiferencaDias(1)));
 
     }
 

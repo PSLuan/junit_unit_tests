@@ -1,5 +1,5 @@
-br\ce\wcaquino\entidades\Locacao.class
-br\ce\wcaquino\servicos\LocacaoService.class
-br\ce\wcaquino\utils\DataUtils.class
-br\ce\wcaquino\entidades\Filme.class
-br\ce\wcaquino\entidades\Usuario.class
+com\example\utils\DataUtils.class
+com\example\servicos\LocacaoService.class
+com\example\entidades\Filme.class
+com\example\entidades\Locacao.class
+com\example\entidades\Usuario.class
